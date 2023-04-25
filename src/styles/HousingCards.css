@@ -1,0 +1,10 @@
+.housing-cards-list{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #F7F7F7;
+    border-radius: 25px;
+}

@@ -1,0 +1,39 @@
+.accordion-title {
+    margin: 10px 0;
+    padding: 10px 30px;
+    background-color: #FF6060;
+    color: white;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    height: 47px;
+    border-radius:5px;
+}
+
+.accordion-container{
+    background-color:#F6F6F6;
+    margin-bottom: 10px;
+    font-size:24px;
+    max-width: 87%;
+    margin: 0 auto
+}
+.accordion-text-opened{
+    padding: 15px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: center;
+}
+
+.crochet{
+    user-select:none;
+}
+
+.crochet-turned{
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width:1024px){
+    .accordion-container{
+        max-width: 100%;
+    }
+}

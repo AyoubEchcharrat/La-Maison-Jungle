@@ -1,0 +1,9 @@
+.headline-container-home{
+    background-image: url('../components/assets/bg_home.jpg') ;
+    background-position: center;
+    background-size:cover;
+    height: 220px;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
