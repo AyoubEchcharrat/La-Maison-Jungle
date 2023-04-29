@@ -1,0 +1,61 @@
+.housing-title{
+    font-weight: 500;
+    font-size: 36px;
+    margin:0
+}
+
+.rating-container{
+    width:200px;
+    display:flex;
+    justify-content: space-between;
+    float: right;
+}
+.housing-infos {
+    margin:30px;
+    display: flex;
+}
+.housing-infos-first {
+    width: 60%;
+}
+.housing-infos-second {
+    width: 40%;
+}
+
+.housing-tag {
+    list-style: none;
+    margin-right: 10px;
+    padding: 11px 30px;
+    background-color: #FF6060;
+    color: white;
+    border-radius: 20px;
+    font-size:14px;
+}
+.housing-tags {
+    display: flex;
+    padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.housing-host {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.housing-host-img {
+    border-radius: 60px;
+    height: 64px;
+    width: 64px;
+}
+.housing-host-name {
+    width: min-content;
+    text-align: end;
+    margin-right:10px
+}
+
+.housing-accordions{
+    display: flex;
+}

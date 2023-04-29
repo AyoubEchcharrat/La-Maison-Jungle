@@ -8,6 +8,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
 function App() {
+
   return (
     <div className="App">
       <Header />
@@ -16,7 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/housingsheet/:id" element={<HousingSheet />} />
         <Route path="/housingsheet/*" element={<Error404 />} />
-        <Route path="/404" element={<Error404 />} />
+        <Route path="/*" element={<Error404 />} />
       </Routes>
       <Footer />
     </div>

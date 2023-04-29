@@ -6,11 +6,14 @@ import CardItem from "../CardItem/CardItem";
 export default function HousingCards() {
     return (
         <div>
-            {/* <div className="fake-card"></div> */}
-            {console.log(logement)}
             <ul className="housing-cards-list">
-                {logement.map(({ id, title, pictures }) =>
-                    <CardItem key={id} title={title} pictures={pictures} />
+                {logement.map(({ id, title, cover }) =>
+                    <CardItem
+                        key={id}
+                        id={id}
+                        title={title}
+                        cover={cover}
+                    />
                 )}
             </ul>
         </div>
