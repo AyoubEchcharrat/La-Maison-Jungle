@@ -6,6 +6,7 @@ import HousingSheet from './HousingSheet/HousingSheet';
 import Error404 from './Error404/Error404'
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import React from 'react';
 
 function App() {
 

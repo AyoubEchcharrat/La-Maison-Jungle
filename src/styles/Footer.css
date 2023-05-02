@@ -14,3 +14,9 @@
     position: relative;
     bottom: -45px;
 }
+
+@media screen and (max-width:905px) {
+    .footer-text{
+        font-size:12px;
+    }
+}

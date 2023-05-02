@@ -7,7 +7,7 @@ function Home() {
     return (
         <div className='body-container'>
             < div className='headline-container-home'>
-                <h1 className='headline-h1 headline'>Chez vous, partout et ailleurs </h1>
+                <h1 className='headline-h1 headline'>Chez vous, partout&nbsp;et&nbsp;ailleurs </h1>
             </div >
             <HousingCards />
         </div>

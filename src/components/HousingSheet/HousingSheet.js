@@ -1,33 +1,62 @@
 import React from "react"
 import logements from '../../datas/logements.json'
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import Slider from "../Slider/Slider"
 import Rate from "../Rate/Rate"
 import Tags from "../Tags/Tags"
 import Host from "../Host/Host"
 import Accordion from "../Accordion/Accordion"
-
 import '../../styles/HousingSheets.css'
+import { useEffect, useState } from "react"
+
+
+
+
+/* export const CheckHousingSheetId = () => {
+    const { id } = useParams()
+    const findId = logements.find(logement => logement.id === id)
+
+    if (!findId) {
+        throw Error("error : this page doesn't exist")
+    }
+    return findId
+} */
 
 function HousingSheet() {
     const { id } = useParams()
-    const findId = logements.find(logement => logement.id === id)
-    const isIdCorrect = (findId) ?
-        console.log(findId) : console.log('error')
-    console.log(isIdCorrect)
+    const navigate = useNavigate()
+    const [housing, setHousing] = useState({
+        tags: [],
+        host: {},
+        pictures: [],
+        equipments: [],
+    })
+
+    useEffect(() => {
+        const findId = logements.find(logement => logement.id === id)
+        if (!findId) {
+            let path = '/404'
+            return navigate(path)
+        } else {
+            setHousing(findId)
+        }
+    }, [id, navigate])
+    /*     const housing = CheckHousingSheetId() */
 
     return <div className="body-container">
-        <Slider pictures={findId.pictures} />
+        <Slider pictures={housing.pictures} />
         <div className="housing-infos">
             <div className="housing-infos-first">
-                <h1 className="housing-title">{findId.title}</h1>
-                <p className='housing-location'>{findId.location} </p>
-                <Tags tags={findId.tags} />
+                <h1 className="housing-title">{housing.title}</h1>
+                <p className='housing-location'>{housing.location} </p>
+                <Tags tags={housing.tags} id={id} />
             </div>
 
             <div className="housing-infos-second">
-                <Host host={findId.host} />
-                <Rate actualRating={findId.rating} />
+                <Host host={housing.host} />
+                <Rate actualRating={housing.rating} id={id} />
+
+
             </div>
         </div>
         <div className="housing-accordions">
@@ -38,12 +67,12 @@ function HousingSheet() {
             </div>
             <div className="housing-accordion-second">
                 < Accordion title='Équipements'>
-                    Climatisation
-                    Wi-Fi
-                    Cuisine
-                    Espace de travail
-                    Fer à repasser
-                    Sèche-cheveux
+                    Climatisation  <br />
+                    Wi-Fi <br />
+                    Cuisine <br />
+                    Espace de travail <br />
+                    Fer à repasser <br />
+                    Sèche-cheveux <br />
                     Cintres
                 </Accordion>
             </div>

@@ -39,3 +39,11 @@
     text-align: left;
     width: 80%;
 }
+
+
+@media screen and (max-width:905px) {
+    .card-item{
+        margin:10px 0px;
+        height: 255px;
+    }
+    }

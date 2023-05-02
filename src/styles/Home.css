@@ -7,3 +7,12 @@
     overflow: hidden;
     margin-bottom: 40px;
 }
+
+
+@media screen and (max-width:905px) {
+    .headline-container-home{
+        height: 111px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+}

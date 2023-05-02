@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import rightArrow from '../assets/rightArrow.svg'
 import leftArrow from '../assets/leftArrow.svg'
+import '../../styles/HousingSheets.css'
 
 function Slider({ pictures }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const sliderStyle = {
         backgroundImage: `url(${pictures[currentIndex]})`,
-        height: '400px',
-        width: '100%',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        position: 'relative'
     }
     const leftArrowStyle = {
         position: 'absolute',
@@ -43,10 +39,10 @@ function Slider({ pictures }) {
 
 
     return pictures.length === 1 ?
-        <div style={sliderStyle}></div> :
-        <div style={sliderStyle}>
-            <img onClick={goToPrevious} style={leftArrowStyle} alt='left arrow' src={leftArrow} />
-            <img onClick={goToNext} style={rightArrowStyle} alt='right arrow' src={rightArrow} />
+        <div className='slider-style' style={sliderStyle}></div> :
+        <div className='slider-style' style={sliderStyle}>
+            <img className='slider-arrow' onClick={goToPrevious} style={leftArrowStyle} alt='left arrow' src={leftArrow} />
+            <img className='slider-arrow' onClick={goToNext} style={rightArrowStyle} alt='right arrow' src={rightArrow} />
         </div >
 
 

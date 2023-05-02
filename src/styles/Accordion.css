@@ -8,6 +8,7 @@
     align-items: center;
     height: 47px;
     border-radius:5px;
+    font-size: 18px;
 }
 
 .accordion-container{
@@ -19,8 +20,8 @@
 .accordion-text-opened{
     padding: 15px;
     font-weight: 400;
-    line-height: 34px;
-    text-align: center;
+    line-height: 142.6%;
+    font-size: 18px;
 }
 
 .crochet{
@@ -31,8 +32,20 @@
     transform: rotate(180deg);
 }
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:905px){
     .accordion-container{
         max-width: 100%;
+    }
+    .accordion-title{
+        font-size: 13px;
+        height: inherit;
+    }
+    .crochet{
+        width: 16px;
+    }
+    .accordion-text-opened{
+        font-size: 12px;
+        line-height: 142.6%;
+        padding:0px 20px 3px 20px
     }
 }

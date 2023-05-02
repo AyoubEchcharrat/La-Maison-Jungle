@@ -1,0 +1,41 @@
+.error-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.error-title{
+    font-weight: 700;
+    font-size: 288px;
+    margin: 0;
+}
+
+.error-message{
+    font-size: 36px;
+    text-align: center;
+}
+
+.error-to-home{
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:905px) {
+    .error-container {
+        height: 60vh;
+    }
+    .error-title{
+        font-size: 96px;
+    }
+    .error-message{
+        font-size: 18px;
+    }
+    .error-to-home{
+        font-size: 14px;
+        padding-top: 80px;
+    }
+    
+}

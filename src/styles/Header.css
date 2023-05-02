@@ -14,3 +14,22 @@
 .header-logo{
     height: 68px;
 }
+
+.active{
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width:905px) {
+    .header{
+        padding:20px 0;
+    }
+    .header-logo{
+        width: 145px;
+    }
+    .navbar-link{
+        font-size: 12px;
+        text-transform:uppercase
+    }
+}

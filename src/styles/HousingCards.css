@@ -8,3 +8,11 @@
     background-color: #F7F7F7;
     border-radius: 25px;
 }
+
+
+
+@media screen and (max-width:905px) {
+    .housing-cards-list{
+        background-color:white
+    }
+    }

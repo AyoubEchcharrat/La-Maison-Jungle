@@ -1,5 +1,5 @@
-export default function Tags({ tags }) {
+export default function Tags({ tags }, id) {
     return <ul className="housing-tags">
-        {tags.map(tag => <li className="housing-tag">{tag}</li>)}
+        {tags.map(tag => <li key={`${id}-${tag}`} className="housing-tag">{tag}</li>)}
     </ul>
 }
