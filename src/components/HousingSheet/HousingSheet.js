@@ -3,7 +3,7 @@ import logements from '../../datas/logements.json'
 import { useParams, useNavigate } from "react-router-dom"
 import Slider from "../Slider/Slider"
 import Rate from "../Rate/Rate"
-import Tags from "../Tags/Tags"
+import Tag from "../Tag/Tag"
 import Host from "../Host/Host"
 import Accordion from "../Accordion/Accordion"
 import '../../styles/HousingSheets.css'
@@ -29,8 +29,10 @@ function HousingSheet() {
         tags: [],
         host: {},
         pictures: [],
-        equipments: [],
+        equipments: []
     })
+    let listedEquipments = housing.equipments.map(item =>
+        <p key={id + '-' + item} className="list-equipments">{item}</p>)
 
     useEffect(() => {
         const findId = logements.find(logement => logement.id === id)
@@ -41,7 +43,6 @@ function HousingSheet() {
             setHousing(findId)
         }
     }, [id, navigate])
-    /*     const housing = CheckHousingSheetId() */
 
     return <div className="body-container">
         <Slider pictures={housing.pictures} />
@@ -49,7 +50,11 @@ function HousingSheet() {
             <div className="housing-infos-first">
                 <h1 className="housing-title">{housing.title}</h1>
                 <p className='housing-location'>{housing.location} </p>
-                <Tags tags={housing.tags} id={id} />
+                <ul className="housing-tags">
+                    {housing.tags.map(tag =>
+                        <Tag key={`${id}-${tag}`} tag={tag} id={id} />
+                    )}
+                </ul>
             </div>
 
             <div className="housing-infos-second">
@@ -61,20 +66,10 @@ function HousingSheet() {
         </div>
         <div className="housing-accordions">
             <div className="housing-accordion-first">
-                < Accordion title='Description'>
-                    Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied).
-                </Accordion>
+                < Accordion title='Description' content={housing.description} />
             </div>
             <div className="housing-accordion-second">
-                < Accordion title='Équipements'>
-                    Climatisation  <br />
-                    Wi-Fi <br />
-                    Cuisine <br />
-                    Espace de travail <br />
-                    Fer à repasser <br />
-                    Sèche-cheveux <br />
-                    Cintres
-                </Accordion>
+                < Accordion title='Équipements' content={listedEquipments} />
             </div>
         </div>
 

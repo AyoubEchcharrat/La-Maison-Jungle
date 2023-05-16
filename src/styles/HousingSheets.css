@@ -69,12 +69,24 @@
 }
 
 .slider-style{
-    height: 400px;
+    height: 415px;
     width: 100%;
     background-position: center;
     background-size: cover;
     position: relative;
     border-radius: 25px;
+}
+
+.list-equipments {
+    margin: 3px 0;
+}
+
+.slider-count{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
 }
 
 @media screen and (max-width:905px) {
@@ -131,5 +143,8 @@
     }
     .slider-arrow{
         height: 20px;
+    }
+    .slider-count{
+        display: none;
     }
 }

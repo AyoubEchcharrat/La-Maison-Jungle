@@ -27,22 +27,22 @@ function Slider({ pictures }) {
 
         const isFirstSlide = currentIndex === 0
         const newIndex = isFirstSlide ? pictures.length - 1 : currentIndex - 1
-        console.log('new index : ' + newIndex)
         setCurrentIndex(newIndex)
     }
     const goToNext = () => {
         const isLastSlide = currentIndex === pictures.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
-        console.log('new index : ' + newIndex)
         setCurrentIndex(newIndex)
     }
 
 
     return pictures.length === 1 ?
-        <div className='slider-style' style={sliderStyle}></div> :
+        <div className='slider-style' style={sliderStyle}></div>
+        :
         <div className='slider-style' style={sliderStyle}>
             <img className='slider-arrow' onClick={goToPrevious} style={leftArrowStyle} alt='left arrow' src={leftArrow} />
             <img className='slider-arrow' onClick={goToNext} style={rightArrowStyle} alt='right arrow' src={rightArrow} />
+            <div className='slider-count'>{currentIndex + 1}/{pictures.length}</div>
         </div >
 
 

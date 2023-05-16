@@ -13,9 +13,8 @@
 
 .accordion-container{
     background-color:#F6F6F6;
-    margin-bottom: 10px;
     font-size:24px;
-    margin: 0 auto
+    margin:0 auto 10px auto;
 }
 .accordion-text-opened{
     padding: 15px;
@@ -38,7 +37,8 @@
     }
     .accordion-title{
         font-size: 13px;
-        height: inherit;
+        height: 30px;
+        padding: 0 15px;
     }
     .crochet{
         width: 16px;
